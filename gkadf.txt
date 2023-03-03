@@ -1,0 +1,5 @@
+FROM almalinux:latest
+MAINTAINER KirillGribkovAleksandrovich
+COPY script /script
+RUN chmod +x /script
+ENTRYPOINT ["/script"]
