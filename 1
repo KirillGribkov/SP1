@@ -1,0 +1,98 @@
+#!/bin/bash
+echo "Gribkov Kirill Aleksandrovich iskatel failov s vivodom atributov fila"
+vtru=y
+vfals=n
+while [ $vtru != $vfals ]
+do
+	echo "Vedite putb k filu"
+	read file1
+	echo $file1
+	if [ -f $file1 ]
+	then
+	lsatr=$(lsattr $file1)
+	
+	
+	lsatr1=${lsatr:0:1} #s
+	
+	lsatr2=${lsatr:1:1} #u
+	
+	lsatr3=${lsatr:2:1} #S
+	
+	lsatr4=${lsatr:4:1} #i
+	
+	lsatr5=${lsatr:5:1} #a
+	
+	lsatr6=${lsatr:6:1} #d
+	
+	lsatr7=${lsatr:7:1} #A
+	
+	lsatr8=${lsatr:8:1} #c
+	
+	lsatr9=${lsatr:10:1} #j
+	
+	lsatr10=${lsatr:12:1} #t
+	
+	lsatr11=${lsatr:14:1} #e
+	if [ $lsatr1 = "s" ]
+	then
+	echo ${lsatr:0:1}
+	echo "bezopasnoe udolenie"
+	fi
+	if [ $lsatr2 = "u" ]
+	then
+	echo ${lsatr:1:1}
+	echo "neudolyaemiy"
+	fi
+	if [ $lsatr3 = "S" ]
+	then
+	echo ${lsatr:2:1}
+	echo "sinhroniy obnovleniya"
+	fi
+	if [ $lsatr4 = "i" ]
+	then
+	echo ${lsatr:4:1}
+	echo "neizmenyaemiy"
+	fi
+	if [ $lsatr5 = "a" ]
+	then
+	echo ${lsatr:5:1}
+	echo "tolko dobavlenie"
+	fi
+	if [ $lsatr6 = "d" ]
+	then
+	echo ${lsatr:6:1}
+	echo "bez dampa"
+	fi
+	if [ $lsatr7 = "A" ]
+	then
+	echo ${lsatr:7:1}
+	echo "nikakih obnovleniy"
+	fi
+	if [ $lsatr8 = "c" ]
+	then
+	echo ${lsatr:8:1}
+	echo "cjatiy"
+	fi
+	if [ $lsatr9 = "j" ]
+	then
+	echo ${lsatr:10:1}
+	echo "jurnalirovanie danih"
+	fi
+	if [ $lsatr10 = "t" ]
+	then
+	echo ${lsatr:12:1}
+	echo "bez objideneniy"
+	fi
+	if [ $lsatr11 = "e" ]
+	then
+	echo ${lsatr:14:1}
+	echo "pashireniy format"
+	fi
+	else
+	echo "net file"
+	echo "code 250"
+	fi
+	echo "zakonchit n"
+	read vtru
+	
+done
