@@ -1,5 +1,6 @@
 FROM almalinux:latest
 MAINTAINER KirillGribkovAleksandrovich
-COPY script /script
-RUN chmod +x /script
-ENTRYPOINT ["/script"]
+RUN dnf update -y && dnf install -y e2fsprogs
+COPY script /home/root/script
+RUN chmod +x /home/root/script
+ENTRYPOINT ["/home/root/script"]
